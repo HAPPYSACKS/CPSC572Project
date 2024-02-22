@@ -24,4 +24,3 @@ print(f'Latitude: {latitude}, Longitude: {longitude}')
 
 # Append data to routes.csv
 
-# Create mapping for airline alliances
