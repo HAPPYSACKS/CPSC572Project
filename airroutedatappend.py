@@ -7,10 +7,12 @@ api_key = 'AIzaSyAJ-57ihz0fENb-TEZF4wWCmKQtSCUdy9w'
 df = pd.read_csv('routes.csv')
 
 
-url = f'https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&key={api_key}'
 
 airport_code = 'JFK'  # example airport code
 query = f'{airport_code} airport'
+
+url = f'https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&key={api_key}'
+
 
 response = requests.get(url)
 data = response.json()
