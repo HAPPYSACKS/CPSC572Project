@@ -9,7 +9,7 @@ df = pd.read_csv('routes.csv')
 
 url = f'https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&key={api_key}'
 
-airport_code = 'JFK'  # Example airport code
+airport_code = 'JFK'  # example airport code
 query = f'{airport_code} airport'
 
 response = requests.get(url)
