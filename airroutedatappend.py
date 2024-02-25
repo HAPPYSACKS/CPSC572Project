@@ -50,31 +50,31 @@ if os.path.exists(airport_position_path) and os.path.getsize(airport_position_pa
     with open(airport_position_path, 'r') as json_file:
         airportPosition = json.load(json_file)
 else:
-
+    # construct airpportPosition if json file doesn't exist.
 
     airportPosition = {} # dictionary that takes (airport_code) -> (lat, lng, elevation)
     airport_codes = set()
 
-for airport_code in df[' source airport']:
-    airport_codes.add(airport_code)
-for airport_code in df[' destination apirport']:
-    airport_codes.add(airport_code)
+    for airport_code in df[' source airport']:
+        airport_codes.add(airport_code)
+    for airport_code in df[' destination apirport']:
+        airport_codes.add(airport_code)
 
 
 
-for airport_code in airport_codes:
+    for airport_code in airport_codes:
 
-    pos = getPosition(airport_code,api_key)
-    lat = pos[0] 
-    lng = pos[1]
+        pos = getPosition(airport_code,api_key)
+        lat = pos[0] 
+        lng = pos[1]
 
-    elevation = getElevation(lat, lng, api_key)
-    airportPosition[airport_code] = (lat, lng, elevation)
+        elevation = getElevation(lat, lng, api_key)
+        airportPosition[airport_code] = (lat, lng, elevation)
 
-# iterate through rows and map lat, lng, and elevation
+    # iterate through rows and map lat, lng, and elevation
 
-with open(airport_position_path, 'w') as json_file:
-    json.dump(airportPosition, json_file, indent=4)
+    with open(airport_position_path, 'w') as json_file:
+        json.dump(airportPosition, json_file, indent=4)
 
 
 latitudes_source = []
@@ -112,7 +112,7 @@ df['elevation_dest'] = elevations_dest
 # Assuming the first result is the airport, extract its location
 
 
-
+df.to_csv('geo_routes.csv', index=False)
 
 # Append data to routes.csv
 
