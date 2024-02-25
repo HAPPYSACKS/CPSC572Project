@@ -8,6 +8,7 @@ api_key = 'AIzaSyAJ-57ihz0fENb-TEZF4wWCmKQtSCUdy9w'
 
 df = pd.read_csv('updated_routes.csv', dtype={'Flight Alliance': str})
 
+
 def getPosition(airport_code: str, api_key: str):
     query = f'{airport_code} airport'
     url = f'https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&key={api_key}'

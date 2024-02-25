@@ -23,7 +23,7 @@ alliances = []
 
 for airlineCode in df['airline']:
     airline = codeToAirline.get(airlineCode, "Unknown")
-    alliance = airlineToAlliance.get(airline, "None")
+    alliance = airlineToAlliance.get(airline, "No Value")
     airlines.append(airline)
     alliances.append(alliance)
 
