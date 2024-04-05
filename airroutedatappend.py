@@ -7,7 +7,7 @@ import json
 # Script that uses the GooglePlacesAPI to convert airline code ito latitiude, longitude, and elevation.
 # Saves result to `geo_routes.csv`, the final spreadsheet.
 
-api_key = 'AIzaSyAJ-57ihz0fENb-TEZF4wWCmKQtSCUdy9w' # no touchy, api_key is already deactivated.
+api_key = '' # insert google places api key to make work
 
 df = pd.read_csv('updated_routes.csv', dtype={'Flight Alliance': str})
 
