@@ -2,6 +2,7 @@ import json
 from typing import Dict
 import pandas as pd
 
+# Script that adds airline alliance to `routes.csv` and saves it as `updated_routes.csv`
 
 data_sheet = 'routes.csv'
 airlines_path = 'airlines.json'

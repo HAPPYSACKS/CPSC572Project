@@ -4,7 +4,10 @@ from typing import Dict
 import pandas as pd
 import json
 
-api_key = 'AIzaSyAJ-57ihz0fENb-TEZF4wWCmKQtSCUdy9w'
+# Script that uses the GooglePlacesAPI to convert airline code ito latitiude, longitude, and elevation.
+# Saves result to `geo_routes.csv`, the final spreadsheet.
+
+api_key = 'AIzaSyAJ-57ihz0fENb-TEZF4wWCmKQtSCUdy9w' # no touchy, api_key is already deactivated.
 
 df = pd.read_csv('updated_routes.csv', dtype={'Flight Alliance': str})
 
@@ -110,10 +113,10 @@ df['lat_dest'] = latitudes_dest
 df['lng_dest'] = longitudes_dest
 df['elevation_dest'] = elevations_dest
 
-# Assuming the first result is the airport, extract its location
+
 
 
 df.to_csv('geo_routes.csv', index=False)
 
-# Append data to routes.csv
+# save as geo_routes.csv. 
 
